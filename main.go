@@ -79,11 +79,11 @@ func switchPlayer() {
 	}
 }
 
-func areEquals(str1 string, str2 string, str3 string) bool {
-	return str1 == str2 && str2 == str3
-}
-
 func isGameOver() bool {
+	areEquals := func(str1, str2, str3 string) bool {
+		return str1 == str2 && str2 == str3
+	}
+
 	for i:= range board {
 		isHorizontalWin := board[0][i] == player && areEquals(board[0][i], board[1][i], board[2][i])
 		isVerticalWin := board[i][0] == player && areEquals(board[i][0], board[i][1], board[i][2])
